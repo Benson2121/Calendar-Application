@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Menu.MenuLoggedIn">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="75.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Rectangle arcWidth="5.0" fill="#d3d3d3" height="800.0" smooth="false" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="300.0" />
+            <Label layoutX="19.0" layoutY="79.0" text="Calendar App">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+            <Label fx:id="messageLoggedIn" layoutX="21.0" layoutY="182.0" text="Logged in as " textFill="#727272">
+               <font>
+                  <Font name="System Italic" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="20.0" layoutY="125.0" text="Main menu">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Separator layoutY="207.0" prefHeight="5.0" prefWidth="300.0" />
+            <Separator layoutY="173.0" prefHeight="5.0" prefWidth="300.0" />
+            <Button id="new" graphicTextGap="6.0" layoutX="15.0" layoutY="237.0" mnemonicParsing="false" onAction="#newCalendar" prefHeight="40.0" prefWidth="163.0" style="-fx-background-radius: 40px;" stylesheets="@mainMenu.css" text="New calendar">
+               <graphic>
+                  <ImageView fitHeight="22.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@new.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <padding>
+                  <Insets left="-5.0" />
+               </padding>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button id="tabSelected" fx:id="myCalendarsTab" alignment="BASELINE_LEFT" graphicTextGap="8.0" layoutY="296.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#selectCalendarsTab" prefHeight="40.0" prefWidth="300.0" stylesheets="@mainMenu.css" text="My calendars">
+               <graphic>
+                  <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@calendar.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button id="tab" fx:id="sharedWithMeTab" alignment="BASELINE_LEFT" graphicTextGap="8.0" layoutY="336.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#selectSharedTab" prefHeight="40.0" prefWidth="300.0" stylesheets="@mainMenu.css" text="Shared with me">
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <graphic>
+                  <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@share.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button id="tab" fx:id="historyTab" alignment="BASELINE_LEFT" graphicTextGap="8.0" layoutY="376.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#selectHistoryTab" prefHeight="40.0" prefWidth="300.0" stylesheets="@mainMenu.css" text="History">
+               <padding>
+                  <Insets left="19.0" />
+               </padding>
+               <graphic>
+                  <ImageView fitHeight="21.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@history.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button id="tab" fx:id="adminSettingsTab" alignment="BASELINE_LEFT" graphicTextGap="8.0" layoutY="416.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#selectAdminTab" prefHeight="40.0" prefWidth="300.0" stylesheets="@mainMenu.css" text="Admin settings">
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@admin.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button id="tab" fx:id="settingsTab" alignment="BASELINE_LEFT" graphicTextGap="8.0" layoutY="456.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#selectSettingsTab" prefHeight="40.0" prefWidth="300.0" stylesheets="@mainMenu.css" text="Settings">
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <graphic>
+                  <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@setting.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button id="save" fx:id="saveButton" graphicTextGap="8.0" layoutX="21.0" layoutY="531.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#save" prefHeight="40.0" prefWidth="120.0" stylesheets="@mainMenu.css" text="Save">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@save.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button id="logOut" fx:id="logOutButton" graphicTextGap="8.0" layoutX="157.0" layoutY="531.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#logOut" prefHeight="40.0" prefWidth="120.0" stylesheets="@mainMenu.css" text="Log out">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@logout.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+         <children>
+            <AnchorPane fx:id="adminSettingsMenu" opacity="0.0" prefHeight="800.0" prefWidth="900.0">
+               <children>
+                  <ListView fx:id="usersList" editable="true" fixedCellSize="42.0" layoutX="100.0" layoutY="125.0" prefHeight="575.0" prefWidth="700.0" style="-fx-padding: 0;" />
+                  <Label layoutX="103.0" layoutY="87.0" text="Users">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Button id="menuButton" layoutX="502.0" layoutY="84.0" mnemonicParsing="false" onAction="#ban" stylesheets="@mainMenu.css" text="Ban">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="2.0" left="8.0" right="8.0" top="2.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button id="menuButton" layoutX="558.0" layoutY="84.0" mnemonicParsing="false" onAction="#unban" stylesheets="@mainMenu.css" text="Unban">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="2.0" left="8.0" right="8.0" top="2.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button id="menuButton" layoutX="637.0" layoutY="84.0" mnemonicParsing="false" onAction="#deleteAccount" stylesheets="@mainMenu.css" text="Delete account">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="2.0" left="8.0" right="8.0" top="2.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@delete.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="settingsMenu" opacity="0.0" prefHeight="800.0" prefWidth="900.0">
+               <children>
+                  <Rectangle arcWidth="5.0" fill="#e8e8e8" height="131.0" layoutX="100.0" layoutY="119.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="700.0" />
+                  <Button id="menuButton" layoutX="124.0" layoutY="194.0" mnemonicParsing="false" onAction="#changePassword" prefWidth="171.0" stylesheets="@mainMenu.css" text="Change password">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <padding>
+                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                     </padding>
+                  </Button>
+                  <Button id="menuButton" layoutX="124.0" layoutY="138.0" mnemonicParsing="false" onAction="#changeUsername" stylesheets="@mainMenu.css" text="Change username">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <padding>
+                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                     </padding>
+                  </Button>
+                  <Label layoutX="110.0" layoutY="76.0" text="Edit Account" textFill="#616161">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="newUsername" layoutX="317.0" layoutY="138.0" promptText="Username">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <Label fx:id="messageChangeUsername" layoutX="552.0" layoutY="143.0" text="Label" textFill="#eb5c5c">
+                     <font>
+                        <Font name="System Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="messageChangePassword" layoutX="553.0" layoutY="202.0" text="Label" textFill="#eb5c5c">
+                     <font>
+                        <Font name="System Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <PasswordField fx:id="newPassword" layoutX="318.0" layoutY="196.0" promptText="Password">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </PasswordField>
+                  <Rectangle arcWidth="5.0" fill="#e8e8e8" height="69.0" layoutX="100.0" layoutY="335.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="700.0" />
+                  <Button id="menuButton" layoutX="122.0" layoutY="351.0" mnemonicParsing="false" onAction="#deleteMyAccount" stylesheets="@mainMenu.css" text="Delete my account">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <padding>
+                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                     </padding>
+                  </Button>
+                  <Label layoutX="110.0" layoutY="289.0" text="Delete Account" textFill="#616161">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <PasswordField fx:id="confirmPassword" layoutX="319.0" layoutY="353.0" promptText="Confirm Password">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </PasswordField>
+                  <Label fx:id="messageConfirmPassword" layoutX="556.0" layoutY="359.0" text="Label" textFill="#eb5c5c">
+                     <font>
+                        <Font name="System Italic" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="historyMenu" disable="true" opacity="0.0" prefHeight="800.0" prefWidth="900.0">
+               <children>
+                  <TableView id="history" fx:id="historyTable" fixedCellSize="35.0" layoutX="100.0" layoutY="110.0" prefHeight="590.0" prefWidth="700.0" stylesheets="@mainMenu.css">
+                    <columns>
+                      <TableColumn id="historyTab" fx:id="historyDate" maxWidth="110.0" minWidth="110.0" prefWidth="110.0" resizable="false" text="Date" />
+                        <TableColumn id="historyTab" fx:id="historyTime" maxWidth="110.0" minWidth="110.0" prefWidth="110.0" resizable="false" text="Time" />
+                        <TableColumn id="historyTab" fx:id="historyUser" maxWidth="110.0" minWidth="110.0" prefWidth="110.0" resizable="false" text="User" />
+                      <TableColumn id="historyTab" fx:id="historyAction" maxWidth="370.0" minWidth="360.0" prefWidth="365.0" resizable="false" text="Action" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+                  <Label layoutX="105.0" layoutY="71.0" text="History">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="myCalendarsMenu" disable="true" opacity="0.0" prefHeight="800.0" prefWidth="900.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <TableView id="calendar" fx:id="myCalendarsTable" fixedCellSize="35.0" layoutX="100.0" layoutY="125.0" prefHeight="575.0" prefWidth="700.0" stylesheets="@mainMenu.css">
+                     <columns>
+                        <TableColumn id="historyTab" fx:id="myCalendarsName" maxWidth="600.0" minWidth="100.0" prefWidth="200.0" text="Name" />
+                        <TableColumn id="historyTab" fx:id="myCalendarsDescription" maxWidth="600.0" minWidth="100.0" prefWidth="500.0" text="Description" />
+                     </columns>
+                  </TableView>
+                  <Label layoutX="105.0" layoutY="87.0" text="My calendars">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Button id="menuButton" layoutX="708.0" layoutY="84.0" mnemonicParsing="false" onAction="#deleteCalendar" stylesheets="@mainMenu.css" text="Delete">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="2.0" left="5.0" right="8.0" top="2.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@delete.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button id="menuButton" layoutX="612.0" layoutY="84.0" mnemonicParsing="false" onAction="#shareCalendar" stylesheets="@mainMenu.css" text="Share">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="2.0" left="6.0" right="8.0" top="2.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@add.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button id="menuButton" layoutX="444.0" layoutY="84.0" mnemonicParsing="false" onAction="#editCalendarProperties" stylesheets="@mainMenu.css" text="Edit properties">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="2.0" left="7.0" right="8.0" top="2.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@description.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button id="menuButtonSpecial" defaultButton="true" layoutX="349.0" layoutY="84.0" mnemonicParsing="false" onAction="#openCalendar" stylesheets="@mainMenu.css" text="Open">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="2.0" left="7.0" right="8.0" top="2.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@open.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="sharedWithMeMenu" prefHeight="800.0" prefWidth="900.0">
+               <children>
+                  <TableView id="calendar" fx:id="sharedWithMeTable" fixedCellSize="35.0" layoutX="100.0" layoutY="125.0" prefHeight="575.0" prefWidth="700.0" stylesheets="@mainMenu.css">
+                     <columns>
+                        <TableColumn id="historyTab" fx:id="sharedWithMeName" maxWidth="500.0" minWidth="100.0" prefWidth="150.0" text="Name" />
+                        <TableColumn id="historyTab" fx:id="sharedWithMeDescription" maxWidth="500.0" minWidth="100.0" prefWidth="400.0" text="Description" />
+                        <TableColumn id="historyTab" fx:id="sharedWithMeAccess" maxWidth="500.0" minWidth="100.0" prefWidth="150.0" text="Access" />
+                     </columns>
+                  </TableView>
+                  <Label layoutX="105.0" layoutY="87.0" text="Shared with me">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Button id="menuButtonSpecial" defaultButton="true" layoutX="543.0" layoutY="84.0" mnemonicParsing="false" onAction="#openCalendar" stylesheets="@mainMenu.css" text="Open">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="2.0" left="7.0" right="8.0" top="2.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@open.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button id="menuButton" layoutX="639.0" layoutY="84.0" mnemonicParsing="false" onAction="#removeMyself" stylesheets="@mainMenu.css" text="Remove myself">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="2.0" left="5.0" right="8.0" top="2.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@remove.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children></AnchorPane>
+            <AnchorPane fx:id="popupShadowRight" disable="true" onMouseClicked="#exitPopup" opacity="0.0" prefHeight="800.0" prefWidth="900.0" style="-fx-background-color: rgba(0, 0, 0, 0.2);" />
+            <AnchorPane fx:id="popup" disable="true" layoutX="150.0" layoutY="200.0" opacity="0.0" prefHeight="400.0" prefWidth="600.0">
+               <children>
+                  <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#fafafa" height="400.0" stroke="#d0d0d0" strokeType="INSIDE" strokeWidth="2.0" width="600.0" />
+                  <TextField fx:id="calendarName" layoutX="25.0" layoutY="45.0" prefHeight="25.0" prefWidth="550.0" promptText="Calendar Name">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <TextArea fx:id="calendarDescription" layoutX="25.0" layoutY="115.0" prefHeight="230.0" prefWidth="550.0" promptText="Calendar Description">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </TextArea>
+                  <Label layoutX="28.0" layoutY="20.0" text="Name">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="29.0" layoutY="90.0" text="Description">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Button id="menuButtonSpecial" defaultButton="true" layoutX="227.0" layoutY="355.0" mnemonicParsing="false" onAction="#confirmCalendarNameDescription" stylesheets="@mainMenu.css" text="Confirm">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="2.0" left="8.0" right="8.0" top="2.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button id="menuButton" defaultButton="true" layoutX="322.0" layoutY="355.0" mnemonicParsing="false" onAction="#exitPopup" stylesheets="@mainMenu.css" text="Back">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="2.0" left="8.0" right="8.0" top="2.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children></AnchorPane>
+      <AnchorPane fx:id="popupShadowLeft" disable="true" onMouseClicked="#exitPopup" opacity="0.0" prefHeight="800.0" prefWidth="300.0" style="-fx-background-color: rgba(0, 0, 0, 0.2);" />
+   </children>
+</GridPane>
