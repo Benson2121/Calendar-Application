@@ -1,5 +1,8 @@
 
 # Calendar-Application
+
+A Calendar App Project implemented with Java
+
 # Program Structure
 
 The SRC folder contains the following packages, whose division mostly had the layers of Clean Architecture in mind:
