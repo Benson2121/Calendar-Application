@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Menu.MenuLoggedOut">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="448.0" layoutY="173.0" text="Calendar App" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="48.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="426.0" layoutY="243.0" text="CSC207 Project, Group 0253">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="subMenu2" disable="true" layoutX="425.0" layoutY="322.0" opacity="0.0" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <TextField fx:id="username" layoutY="2.0" prefWidth="350.0" promptText="Username">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <PasswordField fx:id="password" layoutX="1.0" layoutY="64.0" prefWidth="350.0" promptText="Password">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </PasswordField>
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutY="159.0" mnemonicParsing="false" onAction="#getSubMenu1" prefHeight="40.0" prefWidth="170.0" text="Back">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Label fx:id="menuMessage" alignment="CENTER" contentDisplay="CENTER" layoutX="-424.0" layoutY="113.0" prefHeight="27.0" prefWidth="1196.0" textFill="#eb5c5c">
+               <font>
+                  <Font name="System Italic" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="confirm" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" layoutX="181.0" layoutY="159.0" mnemonicParsing="false" onAction="#confirm" prefHeight="40.0" prefWidth="170.0" text="Log in">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="subMenu1" layoutX="426.0" layoutY="324.0" prefHeight="108.0" prefWidth="350.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#getSubMenuSignIn" prefHeight="39.0" prefWidth="350.0" text="Sign in">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button layoutY="62.0" mnemonicParsing="false" onAction="#getSubMenuSignUp" prefHeight="39.0" prefWidth="350.0" text="Sign up">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button layoutY="122.0" mnemonicParsing="false" onAction="#exit" prefHeight="39.0" prefWidth="350.0" text="Exit">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
