@@ -3,6 +3,8 @@
 
 A Calendar App Project implemented with Java
 
+You may want to refer files **design1.pdf**, **design2.pdf** for the architecures.
+
 # Program Structure
 
 The SRC folder contains the following packages, whose division mostly had the layers of Clean Architecture in mind:
