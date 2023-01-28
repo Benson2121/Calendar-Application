@@ -4,7 +4,7 @@
 A Calendar App Project implemented with Java
 
 # Program Structure
-
+a
 The SRC folder contains the following packages, whose division mostly had the layers of Clean Architecture in mind:
 - **Entities**: All entity classes
 - **UseCase**: All use case/manager classes
